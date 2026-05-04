@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BMW E46 330ci — History</title>
+  <!-- Bootstrap 5.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Custom theme -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -14,13 +17,23 @@
     <p class="sub-title">The Ultimate Driving Machine — E46 Generation</p>
   </header>
 
-  <!-- ===== Navigation ===== -->
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html" class="active">History</a></li>
-      <li><a href="engine.html">Engine</a></li>
-      <li><a href="suspension.html">Suspension</a></li>
-    </ul>
+  <!-- ===== Navigation (Bootstrap collapsible navbar) ===== -->
+  <nav class="navbar navbar-expand-md" aria-label="Main navigation">
+    <div class="container-lg">
+      <button class="navbar-toggler ms-auto" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+        <ul class="navbar-nav gap-1 py-2 py-md-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">History</a></li>
+          <li class="nav-item"><a class="nav-link" href="engine.html">Engine</a></li>
+          <li class="nav-item"><a class="nav-link" href="suspension.html">Suspension</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <!-- ===== Hero ===== -->
@@ -35,7 +48,7 @@
   </div>
 
   <!-- ===== Main Content ===== -->
-  <main>
+  <main class="container-lg py-4 py-md-5">
 
     <!-- Overview -->
     <section class="section" aria-labelledby="overview-heading">
@@ -68,54 +81,56 @@
       <div class="section-header">
         <h2 id="specs-heading">At a Glance</h2>
       </div>
-      <table class="spec-table" aria-label="Key specifications">
-        <tbody>
-          <tr>
-            <th scope="row">Platform</th>
-            <td>BMW E46</td>
-          </tr>
-          <tr>
-            <th scope="row">Body Style</th>
-            <td>2-door Coupe</td>
-          </tr>
-          <tr>
-            <th scope="row">Production Years</th>
-            <td>2000–2006</td>
-          </tr>
-          <tr>
-            <th scope="row">Engine</th>
-            <td>M54B30 — 3.0 L Inline-6</td>
-          </tr>
-          <tr>
-            <th scope="row">Power Output</th>
-            <td>228 hp (170 kW) @ 5,900 rpm</td>
-          </tr>
-          <tr>
-            <th scope="row">Torque</th>
-            <td>214 lb·ft (290 N·m) @ 3,500 rpm</td>
-          </tr>
-          <tr>
-            <th scope="row">0–60 mph</th>
-            <td>~6.0 seconds</td>
-          </tr>
-          <tr>
-            <th scope="row">Top Speed</th>
-            <td>155 mph (250 km/h, electronically limited)</td>
-          </tr>
-          <tr>
-            <th scope="row">Curb Weight</th>
-            <td>~3,175 lb (1,440 kg)</td>
-          </tr>
-          <tr>
-            <th scope="row">Weight Distribution</th>
-            <td>50/50 front/rear</td>
-          </tr>
-          <tr>
-            <th scope="row">Transmission Options</th>
-            <td>5-speed manual / 5-speed automatic (Steptronic)</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="spec-table table table-dark table-striped" aria-label="Key specifications">
+          <tbody>
+            <tr>
+              <th scope="row">Platform</th>
+              <td>BMW E46</td>
+            </tr>
+            <tr>
+              <th scope="row">Body Style</th>
+              <td>2-door Coupe</td>
+            </tr>
+            <tr>
+              <th scope="row">Production Years</th>
+              <td>2000–2006</td>
+            </tr>
+            <tr>
+              <th scope="row">Engine</th>
+              <td>M54B30 — 3.0 L Inline-6</td>
+            </tr>
+            <tr>
+              <th scope="row">Power Output</th>
+              <td>228 hp (170 kW) @ 5,900 rpm</td>
+            </tr>
+            <tr>
+              <th scope="row">Torque</th>
+              <td>214 lb·ft (290 N·m) @ 3,500 rpm</td>
+            </tr>
+            <tr>
+              <th scope="row">0–60 mph</th>
+              <td>~6.0 seconds</td>
+            </tr>
+            <tr>
+              <th scope="row">Top Speed</th>
+              <td>155 mph (250 km/h, electronically limited)</td>
+            </tr>
+            <tr>
+              <th scope="row">Curb Weight</th>
+              <td>~3,175 lb (1,440 kg)</td>
+            </tr>
+            <tr>
+              <th scope="row">Weight Distribution</th>
+              <td>50/50 front/rear</td>
+            </tr>
+            <tr>
+              <th scope="row">Transmission Options</th>
+              <td>5-speed manual / 5-speed automatic (Steptronic)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- History Timeline -->
@@ -213,40 +228,47 @@
         generation.
       </p>
 
-      <div class="card-grid">
+      <!-- Bootstrap Flexbox row — 1 col on xs, 2 on sm, 3 on lg -->
+      <div class="row g-3 mt-1">
 
-        <div class="card">
-          <h3>Motorsport Heritage</h3>
-          <p>
-            The E46 competed in the German Touring Car Championship (DTM),
-            BTCC, and numerous national racing series. Its near-perfect weight
-            balance translated directly from track success back to road cars.
-          </p>
-          <span class="tag">DTM</span>
-          <span class="tag">BTCC</span>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card">
+            <h3>Motorsport Heritage</h3>
+            <p>
+              The E46 competed in the German Touring Car Championship (DTM),
+              BTCC, and numerous national racing series. Its near-perfect weight
+              balance translated directly from track success back to road cars.
+            </p>
+            <span class="tag">DTM</span>
+            <span class="tag">BTCC</span>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Enthusiast Community</h3>
-          <p>
-            Decades after production ended, the E46 remains one of the most
-            popular platforms for performance modification, track-day use, and
-            drift events worldwide — a testament to its accessible engineering
-            and robust aftermarket support.
-          </p>
-          <span class="tag">Aftermarket</span>
-          <span class="tag">Track</span>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card">
+            <h3>Enthusiast Community</h3>
+            <p>
+              Decades after production ended, the E46 remains one of the most
+              popular platforms for performance modification, track-day use, and
+              drift events worldwide — a testament to its accessible engineering
+              and robust aftermarket support.
+            </p>
+            <span class="tag">Aftermarket</span>
+            <span class="tag">Track</span>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Awards &amp; Recognition</h3>
-          <p>
-            The E46 3 Series won multiple <em>Car of the Year</em> awards and
-            topped numerous "best driver's car" polls throughout its production
-            run and into the following decade as a used-car recommendation.
-          </p>
-          <span class="tag">COTY</span>
-          <span class="tag">Best Driver's Car</span>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card">
+            <h3>Awards &amp; Recognition</h3>
+            <p>
+              The E46 3 Series won multiple <em>Car of the Year</em> awards and
+              topped numerous "best driver's car" polls throughout its production
+              run and into the following decade as a used-car recommendation.
+            </p>
+            <span class="tag">COTY</span>
+            <span class="tag">Best Driver's Car</span>
+          </div>
         </div>
 
       </div>
@@ -265,5 +287,7 @@
     <p>BMW E46 330ci Informational Site &mdash; Content for educational purposes only.</p>
   </footer>
 
+  <!-- Bootstrap JS bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
